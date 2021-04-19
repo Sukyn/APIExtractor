@@ -159,7 +159,7 @@ if __name__ == '__main__':
                 # Pour cela on ouvre déjà le un fichier
                 if emails.json():
                     with open(nom_fichier_emails +
-                              f"{nom_enquete}.csv", "w") as csvfile:
+                              f"{nom_enquete}.csv", "w", encoding="utf-8") as csvfile:
 
                         # On ouvre le fichier en écriture
                         script = csv.writer(csvfile)
@@ -197,9 +197,9 @@ if __name__ == '__main__':
                             # renvoie quand même des variables
                             # anglaises pour les emails
                             translation = {
-                                "Finished": "Fini",
+                                "Finished": "Terminé",
                                 "Contacted": "Contacté",
-                                "Started": "Commencé",
+                                "Started": "Abandonné",
                                 "Blacklist": "Blacklist",
                                 "Available": "Disponible",
                                 "BadFormat": "Adresse Invalide"
@@ -238,7 +238,7 @@ if __name__ == '__main__':
                 if resultats:
                     resultats.pop(0)
                     with open(nom_fichier_resultats +
-                              f"{nom_enquete}.csv", "w") as csvfile2:
+                              f"{nom_enquete}.csv", "w", encoding="utf-8") as csvfile2:
 
                         # On écrit les valeurs des réponses dans ce fichier
                         script = csv.writer(csvfile2)
